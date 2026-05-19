@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+body {
+  background-color: #f9fafb; /* gray-50 */
+  color: #1e293b; /* slate-800 */
+}
+
+/* Quitar sombras pesadas de las tarjetas y añadir bordes finos */
+.vertical-timeline-element-content {
+  box-shadow: none !important;
+  border: 1px solid #e5e7eb !important; /* border-gray-200 */
+  background: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+/* Personalizar la línea vertical central */
+.vertical-timeline::before {
+  background: #cbd5e1 !important; /* bg-slate-300 */
+  width: 2px !important;
+}
+
+/* Quitar o estilizar la flecha de la tarjeta */
+.vertical-timeline-element-content-arrow {
+  border-right: 7px solid #e5e7eb !important;
+}
