@@ -10,7 +10,7 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
           <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" className="w-full h-full object-cover" />
         </div>
         <h1 className="text-2xl font-bold text-slate-800 mb-1">Constanza Diaz Contreras</h1>
-        <h2 className="text-sm font-medium text-slate-500 mb-4">Frontend Engineer</h2>
+        <h2 className="text-sm font-medium text-slate-500 mb-4">Customer Onboarding Executive</h2>
         <p className="text-sm text-slate-600 mb-6">
           Especialista en React y arquitecturas escalables. Transformando ideas en experiencias web de alto rendimiento.
         </p>
