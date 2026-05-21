@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link, Briefcase, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, availableTags }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentLogoSlide, setCurrentLogoSlide] = useState(0);
   const [currentReview, setCurrentReview] = useState(0);
   
-  // Array de imágenes de ejemplo para el carrusel (puedes cambiarlas por las tuyas)
-  const carouselImages = [
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80"
+  // Array de logos de ejemplo (puedes cambiarlos por los reales después)
+  const clientLogos = [
+    "https://placehold.co/120x60/fbe0ec/1e293b?text=Xiaomi",
+    "https://placehold.co/120x60/fbe0ec/1e293b?text=Modmed",
+    "https://placehold.co/120x60/fbe0ec/1e293b?text=BPO+Acciona",
+    "https://placehold.co/120x60/fbe0ec/1e293b?text=Albermate"
   ];
 
   const reviews = [
@@ -39,13 +40,13 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
     }
   ];
 
-  // Auto-play del carrusel de imágenes cada 4 segundos
+  // Auto-play del carrusel de logos cada 3 segundos
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
-    }, 4000);
+      setCurrentLogoSlide((prev) => (prev === clientLogos.length - 1 ? 0 : prev + 1));
+    }, 3000);
     return () => clearInterval(timer);
-  }, [carouselImages.length]);
+  }, [clientLogos.length]);
 
   // Auto-play del carrusel de reviews cada 6 segundos
   useEffect(() => {
@@ -55,12 +56,12 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
     return () => clearInterval(timer);
   }, [reviews.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+  const nextLogoSlide = () => {
+    setCurrentLogoSlide((prev) => (prev === clientLogos.length - 1 ? 0 : prev + 1));
   };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+  const prevLogoSlide = () => {
+    setCurrentLogoSlide((prev) => (prev === 0 ? clientLogos.length - 1 : prev - 1));
   };
 
   return (
@@ -91,11 +92,11 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
       <div className="mb-8">
         <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Filtrar por Tipo</h3>
         <div className="flex flex-wrap gap-2">
-          {['todos', 'aporte', 'logro'].map(type => (
+          {['todos', 'Gestión Internacional & Bilingüe', 'Innovación & Automatización', 'Éxito del Cliente (Customer Success)', 'Liderazgo & Capacitación'].map(type => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
-              className={`px-4 py-1.5 text-sm font-medium rounded-full capitalize transition-colors ${
+              className={`px-4 py-1.5 text-[13px] font-medium rounded-full transition-colors ${
                 activeType === type 
                   ? 'bg-theme-4 text-white' 
                   : 'bg-theme-1 text-slate-600 hover:bg-theme-2'
@@ -107,55 +108,8 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
         </div>
       </div>
 
-      {/* Carrusel Cuadrado */}
-      <div className="w-full">
-        <div className="relative w-4/5 max-w-[260px] mx-auto aspect-square rounded-2xl overflow-hidden group border border-theme-4 shadow-sm">
-          {/* Imágenes */}
-          <div 
-            className="flex h-full transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {carouselImages.map((src, index) => (
-              <img 
-                key={index}
-                src={src} 
-                alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover flex-shrink-0"
-              />
-            ))}
-          </div>
-
-          {/* Botones de navegación (visibles al hacer hover) */}
-          <button 
-            onClick={prevSlide}
-            className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/80 text-slate-800 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white shadow-sm"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/80 text-slate-800 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white shadow-sm"
-          >
-            <ChevronRight size={20} />
-          </button>
-
-          {/* Indicadores (puntitos) */}
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-            {carouselImages.map((_, index) => (
-              <div 
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-1.5 h-1.5 rounded-full cursor-pointer transition-all ${
-                  currentSlide === index ? 'bg-white w-3' : 'bg-white/50'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Reviews de Clientes (Carrusel) */}
-      <div className="mt-8 mb-6">
+      <div className="mb-8">
         <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Lo que dicen mis clientes</h3>
         
         <div className="relative w-full overflow-hidden rounded-xl bg-theme-1 border border-theme-2 shadow-sm pb-7">
@@ -188,6 +142,42 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
               />
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Carrusel de Logos de Clientes */}
+      <div className="w-full mb-6">
+        <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 text-center sm:text-left">Cony Lovers</h3>
+        <div className="relative w-full max-w-[200px] mx-auto sm:mx-0 h-16 rounded-xl overflow-hidden group border border-theme-2 shadow-sm bg-theme-1 flex items-center justify-center">
+          {/* Logos */}
+          <div 
+            className="flex h-full w-full transition-transform duration-500 ease-out items-center"
+            style={{ transform: `translateX(-${currentLogoSlide * 100}%)` }}
+          >
+            {clientLogos.map((src, index) => (
+              <div key={index} className="w-full h-full flex-shrink-0 flex items-center justify-center p-2">
+                <img 
+                  src={src} 
+                  alt={`Logo Cliente ${index + 1}`}
+                  className="max-w-full max-h-full object-contain mix-blend-multiply"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Botones de navegación (visibles al hacer hover) */}
+          <button 
+            onClick={prevLogoSlide}
+            className="absolute left-1 top-1/2 -translate-y-1/2 p-1 rounded-full bg-white/80 text-slate-800 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white shadow-sm"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button 
+            onClick={nextLogoSlide}
+            className="absolute right-1 top-1/2 -translate-y-1/2 p-1 rounded-full bg-white/80 text-slate-800 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white shadow-sm"
+          >
+            <ChevronRight size={16} />
+          </button>
         </div>
       </div>
     </div>

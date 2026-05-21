@@ -7,7 +7,7 @@ export const logros = [
     empresa: "Buk",
     descripcion: "Diseño y conducción de una capacitación especializada para el equipo de Asistencia sobre compatibilidad e instalación de dispositivos biométricos de terceros. El proyecto incluyó la redacción de un manual detallado y una guía de diagnóstico de problemas (troubleshooting), con el objetivo de fomentar la autonomía operativa del equipo y reducir la escalabilidad de tickets al área de Hardware.",
     tags: [],
-    tipo: "aporte",
+    tipo: "Liderazgo & Capacitación",
     icono: "BookOpen"
   },
   {
@@ -18,7 +18,7 @@ export const logros = [
     empresa: "Buk",
     descripcion: "Programación de una herramienta interna en Excel diseñada para transformar y adaptar automáticamente las planillas de datos de clientes al formato estándar del sistema. Esta iniciativa agiliza significativamente la carga de información, reduciendo la carga operativa del equipo de implementación y minimizando errores manuales.",
     tags: [],
-    tipo: "aporte",
+    tipo: "Innovación & Automatización",
     icono: "FileSpreadsheet"
   },
   {
@@ -29,7 +29,7 @@ export const logros = [
     empresa: "Buk",
     descripcion: "Desempeñé el rol de mentora (Buddy) para la integración de nuevas colaboradoras al equipo. Brindé capacitación técnica, herramientas prácticas y acompañamiento continuo para asegurar su formación como ejecutivas de excelencia dentro de los estándares de la compañía.",
     tags: [],
-    tipo: "aporte",
+    tipo: "Liderazgo & Capacitación",
     icono: "Users"
   },
   {
@@ -40,7 +40,7 @@ export const logros = [
     empresa: "Buk",
     descripcion: "Representante oficial del equipo de Asistencia en la mesa de trabajo conjunta con el área de Hardware. A través de esta sinergia, hemos logrado diseñar capacitaciones integrales sobre el uso de dispositivos, estandarizar la documentación técnica para clientes y actualizar el material audiovisual de soporte.",
     tags: [],
-    tipo: "aporte",
+    tipo: "Liderazgo & Capacitación",
     icono: "Handshake"
   },
   {
@@ -51,7 +51,7 @@ export const logros = [
     empresa: "Cliente: Modmed",
     descripcion: "Liderazgo en el proceso de implementación ejecutado completamente en inglés, garantizando la inclusión y comprensión técnica integral por parte de la gerencia de Recursos Humanos en Estados Unidos, en coordinación directa con su contraparte en Chile.",
     tags: [],
-    tipo: "logro",
+    tipo: "Gestión Internacional & Bilingüe",
     icono: "Globe"
   },
   {
@@ -62,7 +62,7 @@ export const logros = [
     empresa: "Buk",
     descripcion: "Participación clave en el proyecto corporativo para automatizar la creación de minutas en el área de Onboarding. Aporté un modelo basado en IA que analiza las grabaciones de las sesiones, el cual evolucionó hasta convertirse en una herramienta transversal a nivel regional.",
     tags: [],
-    tipo: "aporte",
+    tipo: "Innovación & Automatización",
     icono: "Bot"
   },
   {
@@ -73,7 +73,7 @@ export const logros = [
     empresa: "Buk",
     descripcion: "Al cumplir un año en la compañía, alcancé el hito de 100 clientes implementados de manera satisfactoria. Mantuve métricas de excelencia (alto NPS) y forjé relaciones duraderas basadas en la confianza técnica y el soporte continuo.",
     tags: [],
-    tipo: "logro",
+    tipo: "Éxito del Cliente (Customer Success)",
     icono: "Award"
   },
   {
@@ -84,7 +84,7 @@ export const logros = [
     empresa: "Buk",
     descripcion: "Co-desarrollo y presentación de un proyecto de innovación enfocado en la automatización de tareas administrativas para optimizar el tiempo del equipo de implementadores (COEs). Los conceptos de esta propuesta han impulsado diversas mejoras continuas y eficiencias operativas a lo largo del año.",
     tags: [],
-    tipo: "aporte",
+    tipo: "Innovación & Automatización",
     icono: "Lightbulb"
   },
   {
@@ -95,7 +95,7 @@ export const logros = [
     empresa: "Cliente: BPO Acciona",
     descripcion: "Gestión exitosa de un cliente de alta complejidad técnica y relacional. A través de un trabajo constante y reuniones, se logró revertir una percepción inicial negativa, fidelizando al cliente al punto de integrar a todos sus subclientes en el ecosistema.",
     tags: [],
-    tipo: "logro",
+    tipo: "Éxito del Cliente (Customer Success)",
     icono: "HeartHandshake"
   },
   {
@@ -106,7 +106,7 @@ export const logros = [
     empresa: "Buk",
     descripcion: "Colaboré en el desarrollo y perfeccionamiento de una herramienta de recordatorios automáticos para las reuniones del equipo de Onboarding. Esta iniciativa escaló rápidamente y fue adoptada a nivel corporativo, convirtiéndose en una solución transversal.",
     tags: [],
-    tipo: "aporte",
+    tipo: "Innovación & Automatización",
     icono: "Mail"
   },
   {
@@ -117,7 +117,7 @@ export const logros = [
     empresa: "Prospecto: Albermate",
     descripcion: "Brindé soporte estratégico y lingüístico en un proceso de venta internacional de alta complejidad con stakeholders en India, EE. UU., Chile y México. Facilité la comunicación entre el equipo comercial y los representantes angloparlantes.",
     tags: [],
-    tipo: "aporte",
+    tipo: "Gestión Internacional & Bilingüe",
     icono: "Languages"
   },
   {
@@ -128,7 +128,7 @@ export const logros = [
     empresa: "Cliente: Xiaomi",
     descripcion: "Lideré la implementación presencial del sistema ejecutada íntegramente en inglés en las oficinas del cliente. Se logró superar la barrera idiomática de la plataforma, adaptando la capacitación técnica al ritmo de las contrapartes internacionales.",
     tags: [],
-    tipo: "logro",
+    tipo: "Gestión Internacional & Bilingüe",
     icono: "Smartphone"
   },
   {
@@ -139,7 +139,7 @@ export const logros = [
     empresa: "Buk",
     descripcion: "Locución y narración de videotutoriales para el lanzamiento de nuevas funcionalidades clave en la plataforma de Asistencia. Este material educativo sigue vigente y es utilizado activamente en el proceso de onboarding de nuevos clientes.",
     tags: [],
-    tipo: "aporte",
+    tipo: "Liderazgo & Capacitación",
     icono: "Video"
   }
 ];

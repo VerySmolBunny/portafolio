@@ -16,22 +16,42 @@ const Timeline = ({ logros }) => {
             // Obtener el componente de icono dinámicamente
             const IconComponent = Icons[item.icono] || Icons.Code;
             
+            let bgStyle = 'var(--color-theme-5)';
+            let textColor = '#1e293b';
+            let badgeClass = 'bg-theme-5 text-slate-800';
+
+            if (item.tipo === 'Éxito del Cliente (Customer Success)') {
+              bgStyle = 'var(--color-theme-green)';
+              textColor = '#ffffff';
+              badgeClass = 'bg-theme-green text-slate-800';
+            } else if (item.tipo === 'Innovación & Automatización') {
+              bgStyle = 'var(--color-theme-4)';
+              textColor = '#ffffff';
+              badgeClass = 'bg-theme-4 text-white';
+            } else if (item.tipo === 'Liderazgo & Capacitación') {
+              bgStyle = 'var(--color-theme-3)';
+              textColor = '#1e293b';
+              badgeClass = 'bg-theme-3 text-slate-800';
+            } else if (item.tipo === 'Gestión Internacional & Bilingüe') {
+              bgStyle = 'var(--color-theme-5)';
+              textColor = '#1e293b';
+              badgeClass = 'bg-theme-5 text-slate-800';
+            }
+
             return (
               <VerticalTimelineElement
                 key={item.id}
                 date={item.fecha}
                 dateClassName="text-slate-500 font-medium sm:ml-4"
                 iconStyle={{ 
-                  background: item.tipo === 'logro' ? 'var(--color-theme-green)' : 'var(--color-theme-5)', 
-                  color: item.tipo === 'logro' ? '#ffffff' : '#1e293b',
+                  background: bgStyle, 
+                  color: textColor,
                   boxShadow: '0 0 0 4px var(--color-theme-1), inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)'
                 }}
                 icon={<IconComponent />}
               >
                 <div className="flex flex-col gap-2">
-                  <span className={`self-start text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
-                    item.tipo === 'logro' ? 'bg-theme-green text-slate-800' : 'bg-theme-5 text-slate-800'
-                  }`}>
+                  <span className={`self-start text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${badgeClass}`}>
                     {item.tipo}
                   </span>
                   
