@@ -4,7 +4,7 @@ import Timeline from './components/Timeline';
 import { logros } from './data/logros';
 
 function App() {
-  const [activeType, setActiveType] = useState('todos');
+  const [activeType, setActiveType] = useState('Todos');
   const [activeTag, setActiveTag] = useState('todos');
 
   // Extraer todos los tags únicos para el filtro
@@ -19,7 +19,7 @@ function App() {
   // Filtrar los logros según los estados activos
   const filteredLogros = useMemo(() => {
     return logros.filter(item => {
-      const matchType = activeType === 'todos' || item.tipo === activeType;
+      const matchType = activeType === 'Todos' || activeType === 'todos' || item.tipo === activeType;
       const matchTag = activeTag === 'todos' || item.tags.includes(activeTag);
       return matchType && matchTag;
     });

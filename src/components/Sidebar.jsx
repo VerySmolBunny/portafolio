@@ -91,7 +91,7 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
       <div className="mb-8">
         <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Filtrar por Tipo</h3>
         <div className="flex flex-wrap gap-2">
-          {['Todos', 'Gestión Internacional & Bilingüe', 'Innovación & Automatización', 'Éxito del Cliente (Customer Success)', 'Liderazgo & Capacitación'].map(type => (
+          {['todos', 'Gestión Internacional & Bilingüe', 'Innovación & Automatización', 'Éxito del Cliente (Customer Success)', 'Liderazgo & Capacitación'].map(type => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
