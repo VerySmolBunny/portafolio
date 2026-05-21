@@ -23,28 +23,19 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
 
   const reviews = [
     {
-      text: "Constanza hizo que nuestra transición fuera increíblemente fluida. Su atención al detalle y disposición son excepcionales.",
-      initial: "A",
-      bgClass: "bg-theme-3",
-      textClass: "text-slate-800",
-      name: "Ana Silva",
-      role: "CEO, TechStartup"
+      text: "Muy profesional y grato ambiente. Hizo una exitosa capacitación e implementación.",
+      name: "Yukón",
+      role: ""
     },
     {
-      text: "Las herramientas que desarrolló para nuestro equipo de onboarding nos ahorran horas de trabajo cada semana. ¡Un 7!",
-      initial: "C",
-      bgClass: "bg-theme-4",
-      textClass: "text-white",
-      name: "Carlos Méndez",
-      role: "VP of Operations"
+      text: "Solo puedo mencionar que la implementación fue todo un éxito gracias a la metodología de enseñanza que tiene Constanza Díaz y lo más importante es que siempre anda de muy buen ánimo y eso se agradece, quedé muy contenta con su ayuda y dedicación.",
+      name: "Payscan",
+      role: ""
     },
     {
-      text: "Su dedicación y proactividad marcaron la diferencia. Siempre un paso adelante para mejorar nuestros procesos.",
-      initial: "M",
-      bgClass: "bg-theme-5",
-      textClass: "text-slate-800",
-      name: "María Gómez",
-      role: "Customer Success Manager"
+      text: "El tiempo y el módulo en general son fáciles de usar, además la excelente atención del jefe de proyectos ayudó a que todo fuera más expedito y fácil de utilizar.",
+      name: "Vaic Medical",
+      role: ""
     }
   ];
 
