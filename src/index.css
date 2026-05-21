@@ -35,3 +35,10 @@ body {
 .vertical-timeline-element-content-arrow {
   border-right: 7px solid var(--color-theme-2) !important;
 }
+
+/* Asegurar que la fecha sea visible y oscura en todos los dispositivos */
+.vertical-timeline-element-date {
+  color: #334155 !important; /* slate-700 */
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}

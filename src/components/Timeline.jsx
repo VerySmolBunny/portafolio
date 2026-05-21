@@ -24,7 +24,7 @@ const Timeline = ({ logros }) => {
               <VerticalTimelineElement
                 key={item.id}
                 date={item.fecha}
-                dateClassName="text-slate-500 font-medium sm:ml-4"
+                dateClassName="text-slate-700 font-bold sm:ml-4"
                 iconStyle={{ 
                   background: bgStyle, 
                   color: textColor,
