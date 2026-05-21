@@ -66,9 +66,9 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
   return (
     <div className="flex flex-col h-full bg-white p-6 shadow-sm sm:h-screen sm:sticky sm:top-0 overflow-y-auto no-scrollbar">
       <div className="mb-8 text-center sm:text-left">
-        <div className="w-24 h-24 rounded-full bg-theme-2 mx-auto sm:mx-0 mb-4 overflow-hidden border-2 border-theme-3">
+        <div className="w-24 h-24 rounded-full mx-auto sm:mx-0 mb-4 overflow-hidden">
           {/* Avatar placeholder - reemplaza con tu imagen */}
-          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" className="w-full h-full object-cover" />
+          <img src="/foto-perfil.png" alt="Foto de Constanza" className="w-full h-full object-cover" />
         </div>
         <h1 className="text-3xl font-bold text-slate-800 mb-2">Constanza Diaz Contreras</h1>
         <h2 className="text-base font-medium text-slate-500 mb-4">Customer Onboarding Executive</h2>
