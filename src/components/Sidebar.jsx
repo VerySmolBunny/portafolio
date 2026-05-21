@@ -73,7 +73,7 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
         <h1 className="text-3xl font-bold text-slate-800 mb-2">Constanza Diaz Contreras</h1>
         <h2 className="text-base font-medium text-slate-500 mb-4">Customer Onboarding Executive</h2>
         <p className="text-base text-slate-600 mb-6">
-          Mi misión en Buk: brindar la mejor experiencia para el cliente y crear herramientas que les den superpoderes a mis compañeros. Puede revisar aquí una línea de tiempo de mis logros y aportes al equipo.
+          Mi misión en Buk: brindar la mejor experiencia para el cliente y crear herramientas que les den superpoderes a mis compañeros. Puedes revisar aquí una línea de tiempo de mis logros y aportes al equipo.
         </p>
         <div className="flex justify-center sm:justify-start space-x-4">
           <a href="#" className="text-slate-400 hover:text-theme-4 transition-colors">
@@ -91,7 +91,7 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
       <div className="mb-8">
         <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Filtrar por Tipo</h3>
         <div className="flex flex-wrap gap-2">
-          {['todos', 'Gestión Internacional & Bilingüe', 'Innovación & Automatización', 'Éxito del Cliente (Customer Success)', 'Liderazgo & Capacitación'].map(type => (
+          {['Todos', 'Gestión Internacional & Bilingüe', 'Innovación & Automatización', 'Éxito del Cliente (Customer Success)', 'Liderazgo & Capacitación'].map(type => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
