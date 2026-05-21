@@ -1,43 +1,104 @@
-import React from 'react';
-import { Link, Briefcase, Mail } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Link, Briefcase, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, availableTags }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentReview, setCurrentReview] = useState(0);
+  
+  // Array de imágenes de ejemplo para el carrusel (puedes cambiarlas por las tuyas)
+  const carouselImages = [
+    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80",
+    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80",
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80"
+  ];
+
+  const reviews = [
+    {
+      text: "Constanza hizo que nuestra transición fuera increíblemente fluida. Su atención al detalle y disposición son excepcionales.",
+      initial: "A",
+      bgClass: "bg-theme-3",
+      textClass: "text-slate-800",
+      name: "Ana Silva",
+      role: "CEO, TechStartup"
+    },
+    {
+      text: "Las herramientas que desarrolló para nuestro equipo de onboarding nos ahorran horas de trabajo cada semana. ¡Un 7!",
+      initial: "C",
+      bgClass: "bg-theme-4",
+      textClass: "text-white",
+      name: "Carlos Méndez",
+      role: "VP of Operations"
+    },
+    {
+      text: "Su dedicación y proactividad marcaron la diferencia. Siempre un paso adelante para mejorar nuestros procesos.",
+      initial: "M",
+      bgClass: "bg-theme-5",
+      textClass: "text-slate-800",
+      name: "María Gómez",
+      role: "Customer Success Manager"
+    }
+  ];
+
+  // Auto-play del carrusel de imágenes cada 4 segundos
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [carouselImages.length]);
+
+  // Auto-play del carrusel de reviews cada 6 segundos
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentReview((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [reviews.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+  };
+
   return (
-    <div className="flex flex-col h-full bg-white p-6 shadow-sm sm:h-screen sm:sticky sm:top-0">
+    <div className="flex flex-col h-full bg-white p-6 shadow-sm sm:h-screen sm:sticky sm:top-0 overflow-y-auto no-scrollbar">
       <div className="mb-8 text-center sm:text-left">
-        <div className="w-24 h-24 rounded-full bg-slate-200 mx-auto sm:mx-0 mb-4 overflow-hidden border-2 border-slate-100">
+        <div className="w-24 h-24 rounded-full bg-theme-2 mx-auto sm:mx-0 mb-4 overflow-hidden border-2 border-theme-3">
           {/* Avatar placeholder - reemplaza con tu imagen */}
           <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" className="w-full h-full object-cover" />
         </div>
-        <h1 className="text-2xl font-bold text-slate-800 mb-1">Constanza Diaz Contreras</h1>
-        <h2 className="text-sm font-medium text-slate-500 mb-4">Customer Onboarding Executive</h2>
-        <p className="text-sm text-slate-600 mb-6">
-          Especialista en React y arquitecturas escalables. Transformando ideas en experiencias web de alto rendimiento.
+        <h1 className="text-3xl font-bold text-slate-800 mb-2">Constanza Diaz Contreras</h1>
+        <h2 className="text-base font-medium text-slate-500 mb-4">Customer Onboarding Executive</h2>
+        <p className="text-base text-slate-600 mb-6">
+          Mi misión en Buk: brindar la mejor experiencia para el cliente y crear herramientas que les den superpoderes a mis compañeros. Puede revisar aquí una línea de tiempo de mis logros y aportes al equipo.
         </p>
         <div className="flex justify-center sm:justify-start space-x-4">
-          <a href="#" className="text-slate-400 hover:text-slate-700 transition-colors">
+          <a href="#" className="text-slate-400 hover:text-theme-4 transition-colors">
             <Link size={20} />
           </a>
-          <a href="#" className="text-slate-400 hover:text-blue-600 transition-colors">
+          <a href="#" className="text-slate-400 hover:text-theme-5 transition-colors">
             <Briefcase size={20} />
           </a>
-          <a href="#" className="text-slate-400 hover:text-red-500 transition-colors">
+          <a href="#" className="text-slate-400 hover:text-theme-3 transition-colors">
             <Mail size={20} />
           </a>
         </div>
       </div>
 
       <div className="mb-8">
-        <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Filtrar por Tipo</h3>
+        <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Filtrar por Tipo</h3>
         <div className="flex flex-wrap gap-2">
           {['todos', 'aporte', 'logro'].map(type => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
-              className={`px-3 py-1 text-xs font-medium rounded-full capitalize transition-colors ${
+              className={`px-4 py-1.5 text-sm font-medium rounded-full capitalize transition-colors ${
                 activeType === type 
-                  ? 'bg-slate-800 text-white' 
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  ? 'bg-theme-4 text-white' 
+                  : 'bg-theme-1 text-slate-600 hover:bg-theme-2'
               }`}
             >
               {type}
@@ -46,32 +107,87 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
         </div>
       </div>
 
-      <div>
-        <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Filtrar por Tecnología</h3>
-        <div className="flex flex-wrap gap-2">
-          <button
-            onClick={() => setActiveTag('todos')}
-            className={`px-3 py-1 text-xs rounded-md transition-colors ${
-              activeTag === 'todos' 
-                ? 'bg-blue-100 text-blue-700 font-medium' 
-                : 'bg-slate-50 text-slate-500 hover:bg-slate-100'
-            }`}
+      {/* Carrusel Cuadrado */}
+      <div className="w-full">
+        <div className="relative w-4/5 max-w-[260px] mx-auto aspect-square rounded-2xl overflow-hidden group border border-theme-4 shadow-sm">
+          {/* Imágenes */}
+          <div 
+            className="flex h-full transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            Todos
+            {carouselImages.map((src, index) => (
+              <img 
+                key={index}
+                src={src} 
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover flex-shrink-0"
+              />
+            ))}
+          </div>
+
+          {/* Botones de navegación (visibles al hacer hover) */}
+          <button 
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/80 text-slate-800 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white shadow-sm"
+          >
+            <ChevronLeft size={20} />
           </button>
-          {availableTags.map(tag => (
-            <button
-              key={tag}
-              onClick={() => setActiveTag(tag)}
-              className={`px-3 py-1 text-xs rounded-md transition-colors ${
-                activeTag === tag 
-                  ? 'bg-blue-100 text-blue-700 font-medium' 
-                  : 'bg-slate-50 text-slate-500 hover:bg-slate-100'
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
+          <button 
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-white/80 text-slate-800 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white shadow-sm"
+          >
+            <ChevronRight size={20} />
+          </button>
+
+          {/* Indicadores (puntitos) */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {carouselImages.map((_, index) => (
+              <div 
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-1.5 h-1.5 rounded-full cursor-pointer transition-all ${
+                  currentSlide === index ? 'bg-white w-3' : 'bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Reviews de Clientes (Carrusel) */}
+      <div className="mt-8 mb-6">
+        <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Lo que dicen mis clientes</h3>
+        
+        <div className="relative w-full overflow-hidden rounded-xl bg-theme-1 border border-theme-2 shadow-sm pb-7">
+          <div 
+            className="flex transition-transform duration-500 ease-out h-full"
+            style={{ transform: `translateX(-${currentReview * 100}%)` }}
+          >
+            {reviews.map((review, index) => (
+              <div key={index} className="w-full flex-shrink-0 px-4 pt-3 pb-1">
+                <p className="text-[13px] leading-snug text-slate-600 italic mb-2 min-h-[40px]">
+                  "{review.text}"
+                </p>
+                <div className="flex flex-col">
+                  <p className="text-xs font-bold text-slate-800">{review.name}</p>
+                  <p className="text-[10px] text-slate-500 leading-tight">{review.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Indicadores (puntitos de las reviews) */}
+          <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {reviews.map((_, index) => (
+              <div 
+                key={index}
+                onClick={() => setCurrentReview(index)}
+                className={`w-1.5 h-1.5 rounded-full cursor-pointer transition-all ${
+                  currentReview === index ? 'bg-theme-4 w-3' : 'bg-theme-3'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

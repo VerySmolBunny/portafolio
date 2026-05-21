@@ -26,7 +26,7 @@ function App() {
   }, [activeType, activeTag]);
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col sm:flex-row">
+    <div className="min-h-screen bg-theme-1 flex flex-col sm:flex-row">
       {/* Columna Izquierda: Sidebar (Fijo en desktop) */}
       <div className="w-full sm:w-1/3 lg:w-1/4 sm:fixed sm:h-screen">
         <Sidebar 

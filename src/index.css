@@ -1,25 +1,36 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+@theme {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-theme-1: #fef4f7;
+  --color-theme-2: #fbe0ec;
+  --color-theme-3: #f7c9df;
+  --color-theme-4: #f2aed0;
+  --color-theme-5: #c4d0f2;
+  --color-theme-green: #a9c89b;
+}
 
 body {
-  background-color: #f9fafb; /* gray-50 */
+  background-color: var(--color-theme-1);
   color: #1e293b; /* slate-800 */
 }
 
 /* Quitar sombras pesadas de las tarjetas y añadir bordes finos */
 .vertical-timeline-element-content {
   box-shadow: none !important;
-  border: 1px solid #e5e7eb !important; /* border-gray-200 */
+  border: 1px solid var(--color-theme-2) !important;
   background: #ffffff !important;
   border-radius: 8px !important;
 }
 
 /* Personalizar la línea vertical central */
 .vertical-timeline::before {
-  background: #cbd5e1 !important; /* bg-slate-300 */
+  background: var(--color-theme-3) !important;
   width: 2px !important;
 }
 
 /* Quitar o estilizar la flecha de la tarjeta */
 .vertical-timeline-element-content-arrow {
-  border-right: 7px solid #e5e7eb !important;
+  border-right: 7px solid var(--color-theme-2) !important;
 }

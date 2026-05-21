@@ -22,15 +22,15 @@ const Timeline = ({ logros }) => {
                 date={item.fecha}
                 dateClassName="text-slate-500 font-medium sm:ml-4"
                 iconStyle={{ 
-                  background: item.tipo === 'logro' ? '#fef08a' : '#e0f2fe', // yellow-200 o sky-100
-                  color: item.tipo === 'logro' ? '#854d0e' : '#0369a1', // yellow-800 o sky-700
-                  boxShadow: '0 0 0 4px #f8fafc, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)'
+                  background: item.tipo === 'logro' ? 'var(--color-theme-green)' : 'var(--color-theme-5)', 
+                  color: item.tipo === 'logro' ? '#ffffff' : '#1e293b',
+                  boxShadow: '0 0 0 4px var(--color-theme-1), inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)'
                 }}
                 icon={<IconComponent />}
               >
                 <div className="flex flex-col gap-2">
                   <span className={`self-start text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
-                    item.tipo === 'logro' ? 'bg-yellow-100 text-yellow-800' : 'bg-sky-100 text-sky-800'
+                    item.tipo === 'logro' ? 'bg-theme-green text-slate-800' : 'bg-theme-5 text-slate-800'
                   }`}>
                     {item.tipo}
                   </span>
@@ -46,7 +46,7 @@ const Timeline = ({ logros }) => {
                     {item.tags.map((tag, i) => (
                       <span 
                         key={i} 
-                        className="bg-slate-100 text-slate-600 px-2 py-1 rounded text-xs font-medium"
+                        className="bg-theme-1 text-slate-600 px-2 py-1 rounded text-xs font-medium border border-theme-2"
                       >
                         {tag}
                       </span>
