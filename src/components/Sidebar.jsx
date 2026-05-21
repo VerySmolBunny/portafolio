@@ -18,7 +18,7 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
     "/logo-expreso-rgua.png",
     "/logo-acciona.png",
     "/logo-cococafe.jpg",
-    "/logo-ocoa.jpG"
+    "/logo-ocoa.jpg"
   ];
 
   const reviews = [
