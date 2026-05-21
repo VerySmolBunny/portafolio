@@ -16,27 +16,9 @@ const Timeline = ({ logros }) => {
             // Obtener el componente de icono dinámicamente
             const IconComponent = Icons[item.icono] || Icons.Code;
             
-            let bgStyle = 'var(--color-theme-5)';
-            let textColor = '#1e293b';
-            let badgeClass = 'bg-theme-5 text-slate-800';
-
-            if (item.tipo === 'Éxito del Cliente (Customer Success)') {
-              bgStyle = 'var(--color-theme-green)';
-              textColor = '#ffffff';
-              badgeClass = 'bg-theme-green text-slate-800';
-            } else if (item.tipo === 'Innovación & Automatización') {
-              bgStyle = 'var(--color-theme-4)';
-              textColor = '#ffffff';
-              badgeClass = 'bg-theme-4 text-white';
-            } else if (item.tipo === 'Liderazgo & Capacitación') {
-              bgStyle = 'var(--color-theme-3)';
-              textColor = '#1e293b';
-              badgeClass = 'bg-theme-3 text-slate-800';
-            } else if (item.tipo === 'Gestión Internacional & Bilingüe') {
-              bgStyle = 'var(--color-theme-5)';
-              textColor = '#1e293b';
-              badgeClass = 'bg-theme-5 text-slate-800';
-            }
+            const bgStyle = 'var(--color-theme-pink)';
+            const textColor = '#1e293b';
+            const badgeClass = 'bg-theme-pink text-slate-800';
 
             return (
               <VerticalTimelineElement

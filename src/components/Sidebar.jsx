@@ -97,7 +97,7 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
               onClick={() => setActiveType(type)}
               className={`px-4 py-1.5 text-[13px] font-medium rounded-full transition-colors ${
                 activeType === type 
-                  ? 'bg-theme-4 text-white' 
+                  ? 'bg-theme-pink text-slate-800' 
                   : 'bg-theme-1 text-slate-600 hover:bg-theme-2'
               }`}
             >
