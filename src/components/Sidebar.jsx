@@ -7,10 +7,18 @@ const Sidebar = ({ activeType, setActiveType, activeTag, setActiveTag, available
   
   // Array de logos de ejemplo (puedes cambiarlos por los reales después)
   const clientLogos = [
-    "https://placehold.co/120x60/fbe0ec/1e293b?text=Xiaomi",
-    "https://placehold.co/120x60/fbe0ec/1e293b?text=Modmed",
-    "https://placehold.co/120x60/fbe0ec/1e293b?text=BPO+Acciona",
-    "https://placehold.co/120x60/fbe0ec/1e293b?text=Albermate"
+    "/logo-andesfilms.png",
+    "/logo-xiaomi.png",
+    "/logo-payscan.png",
+    "/logo-oggie.png",
+    "/logo-modmed.png",
+    "/logo-licitalab.png",
+    "/logo-LeCreuset.png",
+    "/logo-GORIOUX.png",
+    "/logo-expreso-rgua.png",
+    "/logo-acciona.png",
+    "/logo-cococafe.jpg",
+    "/logo-ocoa.jpG"
   ];
 
   const reviews = [
